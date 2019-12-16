@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 05 Part D__
+ * @author __Abdul Mannan__
+ * @v 1.0 __07/11/2018__
+ */
+
+public class Lab05d
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      // declare all variables required
+      Double pi;
+   }
+}

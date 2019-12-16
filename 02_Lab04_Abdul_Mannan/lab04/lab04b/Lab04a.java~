@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+/**
+ * __lab 04 part b__
+ * @author __Abdul_Mannan__
+ * @V 1.0 __31/10/2018__
+ */
+
+public class Lab04a
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      //Variables to declare
+      int sum, count, n = 5;
+      
+      
+      
+   }
+}

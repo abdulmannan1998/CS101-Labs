@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 04 Part c__
+ * @author __Abdul Mannan__
+ * @v 1.0 __31/10/2018__
+ */
+
+public class Lab04c
+{
+   public satic void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+   }
+}

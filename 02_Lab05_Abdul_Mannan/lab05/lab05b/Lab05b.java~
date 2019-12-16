@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 05 Part B__
+ * @author __Abdul Mannan__
+ * @v 1.0 __06/11/2018__
+ */
+
+public class Lab05b
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      // declare variables
+      int rows, cols;
+      String out;
+      
+      //prompts and inputs
+      System.out.println("What number of rows do you want?");
+      rows = scan.nextInt();
+      System.out.println("What number of coloumns do you want?");
+      cols = scan.nextInt();
+      out = string(rows) + "," + string(cols) + "   ";
+         
+      //output
+      for ( int x = 1; x <= rows; x++ )
+      {
+         for( int y = 1; y <= cols; y++ )
+         {
+            System.out.print(out);
+         }
+         System.out.println(" ");
+      }
+   }
+}

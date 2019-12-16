@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+/**
+ * __lab 04 part b__
+ * @author __Abdul_Mannan__
+ * @V 1.0 __31/10/2018__
+ */
+
+public class Lab04b
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      // variables to declare
+      int sum = 0, count = 0, value, n = 100, max = 0, min = 100;
+      double avg;
+     
+      // input for value in a loop and calculation
+      while( count < n )
+      {
+         value = scan.nextInt();
+         sum = sum + value;
+         max = Math.max(max, value);
+         min = Math.min(min, value);
+         count++;
+      }
+      
+      avg = (double)sum / (double)count;
+      
+      // output
+      System.out.println("The average of the numbers is " + avg);
+      System.out.println("The smallest number input is " + min + " and the largest is " + max);
+      System.out.println("The total sum of the " + count + " numbers is: " + sum);
+   }
+}

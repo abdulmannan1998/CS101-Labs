@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 3a__
+ * @author __Mannan Abdul__
+ * @version __23/10/2018__
+ */
+
+public class Lab03a
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      
+   
+   
+   
+   }
+}
+ 
