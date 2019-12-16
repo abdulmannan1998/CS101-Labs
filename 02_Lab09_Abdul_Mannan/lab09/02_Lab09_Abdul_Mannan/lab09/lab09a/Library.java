@@ -1,0 +1,101 @@
+import  java.util.ArrayList; 
+/**
+ * __Lab 09 (In this program, we learn to implement OOP and arrays by building
+ * on our previous program.)__
+ * @author __Abdul Mannan__
+ * @version 1.0 __20/12/2018__
+ */
+
+public class Library {
+   // properties
+   ArrayList<LibraryBook> books;
+   
+   // constructors
+   public Library() {
+      books = new ArrayList<LibraryBook>();
+   }
+   
+   /**
+    * this method checks to see if the library is empty or not
+    * @return boolean empty
+    */
+   public boolean isEmpty() {
+      boolean empty = true;
+      for( int x = 0; x < books.size(); x++) {
+         if( books.get(x) != null) {
+            empty = false;
+         }
+      }
+      return empty;
+   }
+   
+   /**
+    * this is the toString method of this class
+    * @return a String with the contents of the library
+    */
+   public String toString() {
+      String contents = "";
+      if( isEmpty() == true) {
+         contents = "The library is empty!!!";
+      }
+      else {
+         for( int x = 0; x < books.size(); x++) {
+            if( books.get(x) != null) {
+               contents =  contents + books.get(x).toString() + "\n";
+            }
+         }
+      }
+      return contents;
+   }
+   
+   /**
+    * this method is used to add a new book to the library if there is space
+    * @param title which is a String
+    * @param author which is a String
+    */
+   public void add( String title, String author) {
+      books.add(new LibraryBook( title, author));
+   }
+   
+   /**
+    * this method will remove the current book from the library by setting it to null
+    * @param bookToRemove which is a LibraryBook
+    * @return a boolean that tells us if the book to remove is present in the library or not
+    */
+   public boolean remove( LibraryBook bookToRemove) {
+      if( bookToRemove.onLoan()) {
+         return false;
+      }
+      else {
+         for( int x = 0; x < books.size(); x++) {
+            if( books.get(x).equals(bookToRemove)) {
+               books.remove(x);
+            }
+         }
+         return true;
+      }
+   }
+   
+   /**
+    * this method will hwlp us a find a library book by its title
+    * @param title which is a String
+    * @return either a LibraryBook if found else null
+    */
+   public LibraryBook findByTitle( String title) {
+      LibraryBook temp;
+      temp = null;
+      for( int x = 0; x < books.size(); x++) {
+         if(  books.get(x) != null && books.get(x).getTitle().equals(title)) {
+            temp = books.get(x);
+         }
+      }
+      return temp;
+   }
+}
+
+
+
+
+
+
+

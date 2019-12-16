@@ -1,0 +1,122 @@
+public class BigNum {
+   //properties
+   final int SIZE = 4;
+   final int BASE = 10;
+   int[] number = new int[SIZE];
+   
+   //constructors
+   public BigNum() {
+      for( int x = 0; x < SIZE; x++) {
+         number[x] = 0;
+      }
+   }
+               
+   public BigNum( String value) {
+      for( int x = 0; x < SIZE; x++) {
+         number[x] = 0;
+      }
+       
+      for( int x = 0; x < value.length(); x++) {
+         number[x] = Integer.valueOf(String.valueOf(value.charAt(value.length() - 1 - x)));
+      }
+   }
+   
+   public BigNum( BigNum copy) {
+      for( int x = 0; x < SIZE; x++) {
+         number[x] = copy.number[x];
+      }
+   }
+   
+   //methods
+   public String toString() {
+      String value;
+      value = "";
+      for( int x = SIZE - 1; x >= 0; x--) {
+         value =  value + Integer.toString(number[x]);
+      }
+      return value;
+   }
+   
+   public boolean equals( BigNum other) {
+      boolean equal;
+      equal = true;
+      for( int x = 0; x < SIZE; x++) {
+         if( number[x] != other.number[x]) {
+            equal = false;
+         }
+      }
+      return equal;
+   }
+   
+   public boolean isZero() {
+      boolean equal;
+      equal = true;
+      for( int x : number) {
+         if( x != 0) {
+            equal = false;
+         }
+      }
+      return equal;
+   }
+   
+   public void shift( boolean left) {
+      if( left == true){
+         for( int x = SIZE - 1; x >= 1; x--) {
+            number[x] = number[x - 1];
+         }
+         number[0] = 0;
+      }
+      else {
+         for( int x = 0; x < SIZE - 2; x++) {
+            number[x] = number[x + 1];
+         }
+         number[SIZE - 1] = 0;
+      }
+   }
+   
+   public int add( BigNum other) {
+      int overflow = 0;
+      int value;
+      for( int x = 0; x < SIZE; x++) {
+         value = number[x] + other.number[x] + overflow;
+         overflow = 0;
+         if( value >= BASE) {
+            value = value - BASE;
+            overflow = 1;
+         }
+         number[x] = value;
+      }
+      return overflow;
+   }
+   
+   public boolean isLessThan( BigNum other) {
+      if( Integer.valueOf(toString()) - Integer.valueOf(other.toString()) < 0) {
+         return true;
+      }
+      else {
+         return false;
+      }
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+}
