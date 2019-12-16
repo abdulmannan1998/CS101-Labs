@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class LibraryTest {
+   public static void main( String[] args) {
+      Scanner scan = new Scanner( System.in);
+      
+      Library library = new Library();
+      String option,
+         find,
+         title,
+         author,
+         action;
+      LibraryBook book;
+      
+      action = "";
+      
+      do {
+         System.out.println( "Library \n\n Select one of the options: Show, Find, Add or Exit.");
+         do {
+            option = scan.next();
+            if( !compare(option)) {
+               System.out.println("Invalid input, try again!");
+            }
+         }while( !compare(option));
+         
+         if(!option.equals("Exit")) {
+            if( option.equals("Show")) {
+               System.out.println(library.toString());
+            }
+            else if( option.equals("Add")) {
+               System.out.println("Enter the title of the book you want to add.");
+               title = scan.nextLine();
+               title = scan.nextLine();
+               System.out.println("Enter the author of the book you want to add.");
+               author = scan.nextLine();
+               library.add( title, author);
+            }
+            else {
+               System.out.println("Enter the title of the book you want to find.");
+               find = scan.nextLine();
+               find = scan.nextLine();
+               if( null == library.findByTitle(find)) {
+                  System.out.println("There are no books by this name in the library");
+               }
+               else {
+                  book = library.findByTitle(find);
+                  System.out.println("Choose one of the following: Loan, Return, Remove or Exit");
+                  do {
+                     action = scan.next();
+                     if( !compare2(action)) {
+                        System.out.println("Invalid input, try again!");
+                     }
+                  }while( !compare2(action));
+                  
+                  if( action.equals("Loan")) {
+                     book.loanBook();
+                  }
+                  else if( action.equals("Return")) {
+                     book.returnBook();
+                  }
+                  else if( action.equals("Remove")) {
+                     if( !library.remove( book)) {
+                        System.out.println("The book is not the library at the moment!");
+                     }
+                  }
+               }
+            }
+         }
+      }while( !option.equals("Exit"));
+      System.out.println("Goodbye");
+   }
+   
+   public static boolean compare( String value) {
+      return value.equals("Show") ||
+         value.equals("Find") ||
+         value.equals("Add") ||
+         value.equals("Exit");
+   }
+   
+   public static boolean compare2( String value) {
+      return value.equals("Loan") ||
+         value.equals("Return") ||
+         value.equals("Remove") ||
+         value.equals("Exit");
+   }
+   
+   
+   
+   
+   
+}

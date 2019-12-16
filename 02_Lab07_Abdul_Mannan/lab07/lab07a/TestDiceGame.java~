@@ -1,0 +1,7 @@
+public class TestDiceGame{
+   public static void main( String[] args) {
+      DiceGame game = new DiceGame();
+      Dice test = new Dice();
+      System.out.println( game.play());
+   }
+}

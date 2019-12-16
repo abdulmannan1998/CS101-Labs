@@ -1,0 +1,20 @@
+public class DiceGame {
+   Dice dice = new Dice();
+   
+   /**
+    * this method will return the number of times the dice had to be rolled
+    * to get two sixes
+    * @return
+    */
+   public int play() {
+      int roll,
+          count;
+      count = 0;
+      roll = 0;
+      do {
+      count++;
+      roll = dice.roll();
+      }while(roll != 12);
+      return count;
+   }
+}

@@ -1,0 +1,15 @@
+public class TestLibraryBook {
+   public static void main( String[] args) {
+   LibraryBook  book1 = new LibraryBook( "CS", "Abdul Mannan");
+   LibraryBook  book2 = new LibraryBook( "Calculus", "Okan Tekman");
+   
+   book1.loanBook();
+   System.out.println(book1.onLoan());
+   System.out.println(book1.getTimesLoaned());
+   book1.returnBook();
+   System.out.println(book1.onLoan());
+   
+   System.out.println(book1);
+   System.out.println(book2);
+   }
+}

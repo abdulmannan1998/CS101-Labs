@@ -1,0 +1,29 @@
+public class Die {
+   //properties
+   int faceValue;
+   
+   //constructors
+   
+   //methods
+   /**
+    * this method generates a random value for a die
+    * @return is an integer dieValue that returns the value of the die
+    */
+   public int roll() {
+      faceValue = (int)((Math.random() * 6) + 1);
+      return faceValue;
+   }
+   
+   /**
+    * this method returns the face value of the die
+    * @return is an integer faceValue
+    */
+   public int getFaceValue() {
+      return faceValue;
+   }
+ 
+   public String toString() {
+      return Integer.toString(faceValue);
+   }
+                          
+}

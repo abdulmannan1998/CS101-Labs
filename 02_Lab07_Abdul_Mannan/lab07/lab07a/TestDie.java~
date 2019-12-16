@@ -1,0 +1,12 @@
+public class TestDie {
+   public static void main( String[] args) {
+      Dice die1;
+      
+      die1 = new Dice();
+      
+      die1.roll();
+      System.out.println( die1.getDie1FaceValue());
+      System.out.println( die1.getDie2FaceValue());
+      System.out.println( die1.getDiceTotal());
+   }
+}

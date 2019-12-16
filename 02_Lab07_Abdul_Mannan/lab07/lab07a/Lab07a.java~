@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+/**
+ * __Lab 07 Part A (In this program, we learn to implement OOP)__
+ * @author __Abdul Mannan__
+ * @version 1.0 __05/12/2018__
+ */
+
+public class Lab07a {
+   public static void main( String[] args) {
+      Scanner scan = new Scanner( System.in);
+      
+   }
+}
